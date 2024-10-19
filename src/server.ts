@@ -535,6 +535,67 @@ app.get('/taxi/:startLongitude,:startLatitude/:endLongitude,:endLatitude/:maxFar
   res.json({  });
 });
 
+/**
+ * @swagger
+ * /api/search/{query}:
+ *   get:
+ *     summary: 검색 결과 조회
+ *     description: 주어진 검색어(query)를 바탕으로 업체 또는 기관의 정보를 검색하고, 그 결과를 반환합니다.
+ *     parameters:
+ *       - in: path
+ *         name: query
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: 검색어
+ *     responses:
+ *       200:
+ *         description: 검색 성공
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 result:
+ *                   type: object
+ *                   properties:
+ *                     total:
+ *                       type: integer
+ *                       description: 총 검색 결과 개수
+ *                     items:
+ *                       type: array
+ *                       items:
+ *                         type: object
+ *                         properties:
+ *                           title:
+ *                             type: string
+ *                             description: 업체, 기관의 이름
+ *                           link:
+ *                             type: string
+ *                             description: 업체, 기관의 상세 정보 URL
+ *                           category:
+ *                             type: string
+ *                             description: 업체, 기관의 분류 정보 (없으면 ""로 나옴)
+ *                           description:
+ *                             type: string
+ *                             description: 업체, 기관에 대한 설명 (없으면 ""로 나옴)
+ *                           address:
+ *                             type: string
+ *                             description: 업체, 기관명의 지번 주소
+ *                           roadAddress:
+ *                             type: string
+ *                             description: 업체, 기관명의 도로명 주소
+ *                           mapx:
+ *                             type: integer
+ *                             description: 업체, 기관이 위치한 장소의 x좌표(경도좌표)
+ *                           mapy:
+ *                             type: integer
+ *                             description: 업체, 기관이 위치한 장소의 y좌표(위도좌표)
+ */
+app.get('/api/search/:query', (req: Request, res: Response) => {
+  res.json({  });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
