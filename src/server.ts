@@ -5,7 +5,7 @@ const port = 3000;
 setupSwagger(app);
 /**
  * @swagger
- * /public/{startLongitude},{startLatitude}/{endLongitude},{endLatitude}:
+ * /api/public/{startLongitude},{startLatitude}/{endLongitude},{endLatitude}:
  *   get:
  *     summary: 대중교통 경로 정보 조회
  *     description: 출발지와 도착지의 경도, 위도를 기반으로 대중교통 길찾기 경로 조회
@@ -189,7 +189,7 @@ app.get('/api/public/:startLongitude,:startLatitude/:endLongitude,:endLatitude',
 
 /**
  * @swagger
- * /car/{startLongitude},{startLatitude}/{endLongitude},{endLatitude}:
+ * /api/car/{startLongitude},{startLatitude}/{endLongitude},{endLatitude}:
  *   get:
  *     summary: 자동차 경로 조회
  *     description: 출발지와 도착지의 경도, 위도를 기반으로 자동차 경로 정보를 조회,option 파라미터가 없으면 기본값으로 traoptimal을 사용
@@ -296,7 +296,7 @@ app.get('/api/car/:startLongitude,:startLatitude/:endLongitude,:endLatitude', (r
 
 /**
  * @swagger
- * /taxi/{startLongitude},{startLatitude}/{endLongitude},{endLatitude}/{maxFare}/{appointmentTime}:
+ * /api/taxi/{startLongitude},{startLatitude}/{endLongitude},{endLatitude}/{maxFare}/{appointmentTime}:
  *   get:
  *     summary: 택시 경로 조회
  *     description: 출발지와 도착지의 경도, 위도, 상한비용과 약속 시간을 기반으로 택시 경로 및 대중교통 경로 조회.
