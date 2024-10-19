@@ -183,7 +183,7 @@ setupSwagger(app);
  *                                             description: 미정차 정류장 여부 (버스인 경우 필수)
  */
 
-app.get('/public/:startLongitude,:startLatitude/:endLongitude,:endLatitude', (req: Request, res: Response) => {
+app.get('/api/public/:startLongitude,:startLatitude/:endLongitude,:endLatitude', (req: Request, res: Response) => {
   res.json({  });
 });
 
@@ -290,7 +290,7 @@ app.get('/public/:startLongitude,:startLatitude/:endLongitude,:endLatitude', (re
  *                                     description: 도로 이름
  */
 
-app.get('/car/:startLongitude,:startLatitude/:endLongitude,:endLatitude', (req: Request, res: Response) => {
+app.get('/api/car/:startLongitude,:startLatitude/:endLongitude,:endLatitude', (req: Request, res: Response) => {
   res.json({ });
 });
 
@@ -531,7 +531,7 @@ app.get('/car/:startLongitude,:startLatitude/:endLongitude,:endLatitude', (req: 
 
 
 
-app.get('/taxi/:startLongitude,:startLatitude/:endLongitude,:endLatitude/:maxFare/:appointmentTime', (req: Request, res: Response) => {
+app.get('/api/taxi/:startLongitude,:startLatitude/:endLongitude,:endLatitude/:maxFare/:appointmentTime', (req: Request, res: Response) => {
   res.json({  });
 });
 
